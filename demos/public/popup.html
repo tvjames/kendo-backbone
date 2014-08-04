@@ -46,9 +46,9 @@
                 $("#log").text(kendo.stringify(products.toJSON()));
 
                 $("#grid").kendoGrid({
-                    editable: true,
+                    editable: "popup",
                     toolbar: ["create"],
-                    columns: ["ProductID", "Name", { command: "destroy" }],
+                    columns: ["ProductID", "Name", { command: ["edit", "destroy"] }],
                     dataSource: {
                         schema: {
                             model: ProductWrapper
