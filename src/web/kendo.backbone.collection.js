@@ -12,7 +12,7 @@
       init: function(collection) {
         ObservableArray.fn.init.call(this, collection.models, model);
 
-        this.collection = collection;
+        this._collection = collection;
       },
 
       splice: function(index, howMany) {
@@ -24,13 +24,13 @@
 
         if (removedItems.length) {
           for (idx = 0, length = removedItems.length; idx < length; idx++) {
-            this.collection.remove(removedItems[idx].backbone);
+            this._collection.remove(removedItems[idx].backbone);
           }
         }
 
         if (itemsToInsert.length) {
           for (idx = 0, length = itemsToInsert.length; idx < length; idx++) {
-            this.collection.unshift(itemsToInsert[idx].backbone);
+            this._collection.unshift(itemsToInsert[idx].backbone);
           }
         }
 

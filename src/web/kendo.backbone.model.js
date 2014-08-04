@@ -13,13 +13,14 @@
           model = new BackboneModel(model);
         }
 
+        this.idField = model.idAttribute;
         Model.fn.init.call(this, model.toJSON());
-        this.backbone = model;
+        this._backbone = model;
       },
       set: function(field, value) {
         Model.fn.set.call(this, field, value);
 
-        this.backbone.set(field, value);
+        this._backbone.set(field, value);
       }
     });
   }
